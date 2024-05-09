@@ -25,6 +25,7 @@ function SendMessageTelegram($message) {
         $body = @{
             chat_id = $chat_id
             text = $messageWithDateTime
+            parse_mode = "HTML"
         }
 
         # Send message to Telegram
@@ -135,11 +136,11 @@ while ($true) {
             # Determine conditions for sending message to Telegram
             $message = ""
             if ($tempValue -lt $min_temp -or $tempValue -gt $max_temp) {
-                $message += "Temp: $tempValue, HashRate: $hashRateValue"
+                $message += "<b>Temp: $tempValue</b>, HashRate: $hashRateValue"
             }
 
             if ($hashRateValue -lt $min_hashrate) {
-                $message += "Temp: $tempValue, HashRate: $hashRateValue"
+                $message += "Temp: $tempValue, <b>HashRate: $hashRateValue</b>"
             }
 
             # Send message to Telegram if any condition is met
