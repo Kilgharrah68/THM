@@ -18,8 +18,9 @@ function SendMessageTelegram($message) {
         $currentDateTime = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
     
         # Add date, time, and remote IP to message
-        $messageWithDateTime = "$ip_miner - $currentDateTime - $message"
-    
+
+        $messageWithDateTime = "<a href='http://$ip_miner'>$ip_miner</a> - $currentDateTime - $message" 
+          
         # Construct Telegram API URL
         $url = "https://api.telegram.org/bot$token/sendMessage"
         $body = @{
