@@ -3,13 +3,23 @@
 #
 
 # Define configuration variables
-$token = "YOUR_TOKEN"
-$chat_id = "YOUR_CHAT_ID"
-$num_miners = 1
-$wait_time_seconds = 30
-$min_temp = 30
-$max_temp = 65
-$min_hashrate = 300
+# Read the configuration file
+$configFile = "config.txt"
+$configData = Get-Content $configFile
+
+# Parse data from the configuration file and assign values to variables
+foreach ($line in $configData) {
+  $key, $value = $line.Split('=').Trim()
+  switch ($key) {
+    "token" { $token = $value }
+    "chat_id" { $chat_id = $value }
+    "num_miners" { $num_miners = $value }
+    "wait_time_seconds" { $wait_time_seconds = $value }
+    "min_temp" { $min_temp = $value }
+    "max_temp" { $max_temp = $value }
+    "min_hashrate" { $min_hashrate = [int]$value }
+  }
+}
 
 # Define function to send message to Telegram
 function SendMessageTelegram($message) {
@@ -19,9 +29,8 @@ function SendMessageTelegram($message) {
     
         # Add date, time, and remote IP to message
 
-        $messageWithDateTime = "<a href='http://$ip_miner'>$ip_miner</a> - $currentDateTime - $message" 
-          
-        # Construct Telegram API URL
+        $messageWithDateTime = "$ip_miner - $currentDateTime - $message"
+         # Construct Telegram API URL
         $url = "https://api.telegram.org/bot$token/sendMessage"
         $body = @{
             chat_id = $chat_id
@@ -120,8 +129,7 @@ while ($true) {
         $successful_connection = $false
         try {
             # Attempt to retrieve system data from the URL
-            $systemInfo = Invoke-RestMethod -Uri "http://$ip_miner/api/system/info" -TimeoutSec 120
-
+            $systemInfo = Invoke-RestMethod -Uri "$ip_miner/api/system/info" -TimeoutSec 120
             # Mark connection as successful if no errors occur while getting data
             $successful_connection = $true
 
