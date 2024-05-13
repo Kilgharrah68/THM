@@ -1,7 +1,9 @@
+apikey=YOUR_APIKEY
+phone=YOUR_PHONE
 token=YOUR_TOKEN
 chat_id=YOUR_CHAT_ID
 num_miners=1
 wait_time_seconds=30
 min_temp=45
-max_temp=60
-min_hashrate=800
+max_temp=65
+min_hashrate=300
