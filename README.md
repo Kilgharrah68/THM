@@ -24,13 +24,12 @@ THM (Temperature Hash Monitor) is a PowerShell script designed to monitor the te
 1. **Network Scanning**: THM scans the local network to identify connected Bitaxe miners using ARP tables.
 2. **API Calls**: For each identified miner, THM makes API calls to obtain temperature and hash rate data.
 3. **Condition Checking**: THM compares the obtained data with predefined thresholds to determine if an alert should be triggered.
-4. **Telegram Notifications**: If abnormal conditions are detected, THM sends a notification via Telegram to inform you.
+4. **Telegram and WhatsApp Notifications**: If abnormal conditions are detected, THM sends a notification via Telegram and WhatsApp to inform you.
 
 ## Requirements
 - PowerShell environment
 - Bitaxe miners connected to the local network
-- Access to a Telegram bot and its corresponding bot token and chat ID to receive notifications. To obtain the Telegram bot token, you need to create a bot using BotFather, a dedicated tool within the Telegram platform for managing bots.
-
+- Access to a Telegram bot and its corresponding token and chat ID, as well as a phone number and an API Key from CallMeBot for receiving notifications. To obtain the Telegram bot token, you need to create a bot using BotFather, a dedicated tool within the Telegram platform for managing bots. Additionally, you must obtain a phone number and an API Key from CallMeBot to enable WhatsApp notifications.
 ## Migration to ESP32-2432S028R
 Currently, I am exploring the possibility of migrating the THM program to a platform compatible with ESP32-2432S028R. If you are interested in contributing to the migration process or have experience with programming on the ESP32-2432S028R, I would love to have your help!
 
@@ -67,12 +66,12 @@ THM (Temperature Hash Monitor) es un script de PowerShell diseñado para monitor
 1. **Exploración de Red**: THM escanea la red local para identificar los mineros Bitaxe conectados utilizando las tablas ARP.
 2. **Llamadas a la API**: Para cada minero identificado, THM realiza llamadas a la API para obtener datos de temperatura y hash rate.
 3. **Verificación de Condiciones**: THM compara los datos obtenidos con umbrales predefinidos para determinar si se debe activar una alerta.
-4. **Notificaciones de Telegram**: Si se detectan condiciones anormales, THM envía una notificación a través de Telegram para informarte.
+4. **Notificaciones de Telegram y WhatsApp:**: SSi se detectan condiciones anormales, THM envía una notificación a través de Telegram y WhatsApp para informarte.
 
 ## Requisitos
 - Entorno de PowerShell
 - Mineros Bitaxe conectados a la red local
-- Acceso a un bot de Telegram y su token y ID de chat correspondientes para recibir notificaciones. Para obtener el token del bot de Telegram, necesitas crear un bot usando BotFather, una herramienta dedicada dentro de la plataforma de Telegram para administrar bots.
+- Acceso a un bot de Telegram y su token y ID de chat correspondientes y a un número de teléfono y una API Key de CallMeBot para recibir notificaciones. Para obtener el token del bot de Telegram, necesitas crear un bot usando BotFather, una herramienta dedicada dentro de la plataforma de Telegram para administrar bots. Además, debes obtener un número de teléfono y una API Key de CallMeBot para habilitar las notificaciones por WhatsApp.
 
 ## Migración a ESP32-2432S028R
 Actualmente, estoy explorando la posibilidad de migrar el programa THM a una plataforma compatible con la ESP32-2432S028R. Si estás interesado en contribuir al proceso de migración o tienes experiencia con la programación en la ESP32-2432S028R, ¡me encantaría contar con tu ayuda!
