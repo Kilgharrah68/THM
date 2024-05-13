@@ -11,20 +11,20 @@ THM (Temperature Hash Monitor) is a PowerShell script designed to monitor the te
 ## Features
 - **Temperature Monitoring**: THM continuously checks the temperature of connected Bitaxe miners.
 - **Hash Rate Monitoring**: It also monitors the hash rate of the miners.
-- **Telegram Notifications**: When the temperature exceeds predefined thresholds or the hash rate drops below a specified level, THM sends alerts via Telegram to notify the user.
-- **Configurability**: You can customize various parameters such as temperature thresholds, hash rate minimums, and Telegram notification settings.
+- **Telegram and/or WhatsApp Notifications**: When the temperature exceeds predefined thresholds or the hash rate drops below a specified level, THM sends alerts via Telegram and/or WhatsApp to notify the user.
+- **Configurability**: You can customize various parameters such as temperature thresholds, hash rate minimums, and Telegram/WhatsApp notification settings.
 
 ## Usage
-1. **Configuration**: Before using THM, you need to configure the script by setting variables such as the Telegram bot token, chat ID, minimum and maximum temperature thresholds, minimum hash rate, etc.
+1. **Configuration**: Before using THM, you need to configure the script by setting variables such as the Telegram bot token, WhatsApp phone, chat ID, minimum and maximum temperature thresholds, minimum hash rate, etc.
 2. **Execution**: You can run the script in a PowerShell environment. Additionally, if you want to run the script in a Windows environment without requiring PowerShell installed, you can convert the script to an executable using tools like PS2EXE.
 3. **Monitoring**: THM continuously monitors connected Bitaxe miners for temperature and hash rate fluctuations.
-4. **Alerts**: When abnormal conditions are detected (e.g., high temperature or low hash rate), THM sends alerts to the specified Telegram chat.
+4. **Alerts**: When abnormal conditions are detected (e.g., high temperature or low hash rate), THM sends alerts to the specified WhatsApp phone and/or Telegram chat and/or WhatsApp phone.
 
 ## How It Works
 1. **Network Scanning**: THM scans the local network to identify connected Bitaxe miners using ARP tables.
 2. **API Calls**: For each identified miner, THM makes API calls to obtain temperature and hash rate data.
 3. **Condition Checking**: THM compares the obtained data with predefined thresholds to determine if an alert should be triggered.
-4. **Telegram and WhatsApp Notifications**: If abnormal conditions are detected, THM sends a notification via Telegram and WhatsApp to inform you.
+4. **Telegram and/or WhatsApp Notifications**: If abnormal conditions are detected, THM sends a notification via Telegram and WhatsApp to inform you.
 
 ## Requirements
 - PowerShell environment
@@ -48,25 +48,25 @@ THM is released under the [MIT License](https://opensource.org/licenses/MIT). Fe
 <summary>Descripción en Español (haz clic para expandir)</summary>
 
 ## Descripción
-THM (Temperature Hash Monitor) es un script de PowerShell diseñado para monitorear la temperatura y el hash rate de mineros Bitaxe en una red local y enviar notificaciones a través de Telegram cuando se cumplen ciertas condiciones.
+THM (Temperature Hash Monitor) es un script de PowerShell diseñado para monitorear la temperatura y el hash rate de mineros Bitaxe en una red local y enviar notificaciones a través de Telegram y/o Whatsapp cuando se cumplen ciertas condiciones.
 
 ## Características
 - **Monitoreo de Temperatura**: THM verifica continuamente la temperatura de los mineros Bitaxe conectados.
 - **Monitoreo de Hash Rate**: También monitorea el hash rate de los mineros.
-- **Notificaciones de Telegram**: Cuando la temperatura excede los umbrales predefinidos o el hash rate cae por debajo de un nivel especificado, THM envía alertas a través de Telegram para notificar al usuario.
-- **Configurabilidad**: Puedes personalizar varios parámetros como los umbrales de temperatura, los mínimos de hash rate y la configuración de notificación de Telegram.
+- **Notificaciones de Telegram y/o Whatsapp**: Cuando la temperatura excede los umbrales predefinidos o el hash rate cae por debajo de un nivel especificado, THM envía alertas a través de Telegram y/o Whatsapp para notificar al usuario.
+- **Configurabilidad**: Puedes personalizar varios parámetros como los umbrales de temperatura, los mínimos de hash rate y la configuración de notificación de Telegram y/o Whatsapp.
 
 ## Uso
 1. **Configuración**: Antes de usar THM, necesitas configurar el script estableciendo variables como el token del bot de Telegram, el ID del chat, los umbrales de temperatura mínimo y máximo, el hash rate mínimo, etc.
 2. **Ejecución**: Puedes ejecutar el script en un entorno de PowerShell. Además, si deseas ejecutar el script en un entorno de Windows sin necesidad de PowerShell instalado, puedes convertir el script en un ejecutable usando herramientas como PS2EXE.
 3. **Monitoreo**: THM monitorea continuamente los mineros Bitaxe conectados en busca de fluctuaciones de temperatura y hash rate.
-4. **Alertas**: Cuando se detectan condiciones anormales (por ejemplo, alta temperatura o bajo hash rate), THM envía alertas al chat de Telegram especificado.
+4. **Alertas**: Cuando se detectan condiciones anormales (por ejemplo, alta temperatura o bajo hash rate), THM envía alertas al chat de Telegram y/o Whatsapp especificado(s).
 
 ## Cómo Funciona
 1. **Exploración de Red**: THM escanea la red local para identificar los mineros Bitaxe conectados utilizando las tablas ARP.
 2. **Llamadas a la API**: Para cada minero identificado, THM realiza llamadas a la API para obtener datos de temperatura y hash rate.
 3. **Verificación de Condiciones**: THM compara los datos obtenidos con umbrales predefinidos para determinar si se debe activar una alerta.
-4. **Notificaciones de Telegram y WhatsApp:**: SSi se detectan condiciones anormales, THM envía una notificación a través de Telegram y WhatsApp para informarte.
+4. **Notificaciones de Telegram y/o WhatsApp:**: Si se detectan condiciones anormales, THM envía una notificación a través de Telegram y/o WhatsApp para informarte.
 
 ## Requisitos
 - Entorno de PowerShell
